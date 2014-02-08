@@ -15,9 +15,16 @@ Linking /home/Andrew/projects/gist/gist to ~/bin/gist ...
 Then use like this:
 
 ```bash
-$ gist .
+$ gist
 120M    vim
 40M     sample
 660K    trash
 232K    gist
+
+$ gist vim | head -n 5
+43M     src
+25M     runtime
+272K    pixmaps
+92K     farsi
+44K     nsis
 ```
