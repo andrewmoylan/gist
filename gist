@@ -2,4 +2,22 @@
 
 # gist: sorted version of du -h
 
+if [ $# -gt 1 ]; then
+	echo "Usage: gist [dir]"
+	exit
+fi
+
+if [ -z "$1" ]; then
+	loc=".";
+else
+	loc=$1;
+fi
+
+if [ ! -d "$loc" ]; then
+	echo "gist: first argument should be a directory"
+	exit
+fi
+
+pushd "$loc" 1> /dev/null
 du --max-depth=1 -k * | sort -nr | cut -f2 | xargs -d '\n' du -sh 2>/dev/null
+popd 1> /dev/null
