@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# gist: sorted version of du -h
+
+du --max-depth=1 -k * | sort -nr | cut -f2 | xargs -d '\n' du -sh 2>/dev/null
