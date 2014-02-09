@@ -19,5 +19,5 @@ if [ ! -d "$loc" ]; then
 fi
 
 pushd "$loc" 1> /dev/null
-du --max-depth=1 -k * | sort -nr | cut -f2 | xargs -d '\n' du -sh 2>/dev/null
+du -d 1 -k * | sort -nr | cut -f2 | xargs -d '\n' du -sh 2>/dev/null
 popd 1> /dev/null
